@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+     <head>
+         <title>Hidden Assignment</title>
+     </head>
+<body>
+<h2>Hidden things by Hema Sree Rathnam Machha</h2>
+<form>
+    <label for="form1_secret">Enter the secret word</label>
+    <input type ="password" id="form1_secret" name="form1_secret" min=10 max=50 step=2 value="Secret"> 
+    <br>
+    <label for="form1_guess">Enter a guess </label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+<div id="result">Put results</div>
+
+<script> 
+
+var correct = 0;
+var wrong = 0;
+
+function processGuess (){
+    console.log("Getting form values")
+    secret = document.getElementById("form1_secret").value
+    guess = document.getElementById("form1_guess").value
+    // confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(secret == guess){
+        correct+= 1;
+        alert("Congratulations")
+        out.innerHTML = "Sucess Attempts: " + correct
+    } else {
+        wrong+=1;
+        alert("Sorry")
+        out.innerHTML = "Wrong Attempt: " + wrong
+    }
+} 
+</script>
+
+</body>
+</html> 
