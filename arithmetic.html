@@ -18,8 +18,25 @@
     <input type="button" onclick="permutations()" value="Compute">
 </form>
 
-
 <p id="result">Permutations Results</p>
+
+<form>
+    <input type="radio" id="plus" name="plus" value="plus" checked >
+    <label for="plus">+</label></br>
+  
+    <input type="radio" id="minus" name="minus" value="minus">
+    <label for="minus">-</label></br>
+  
+    <input type="radio" id="times" name="times" value="times">
+    <label for="times">*</label></br>
+
+    <input type="radio" id="divide" name="divide" value="divide">
+    <label for="divide">/</label></br>
+
+    <input type="button" onclick="processRadio()" value="Get values from radio group">
+</form>
+
+<p id="result1">Radion button Results</p>
 
 <script> 
 function permutations(){
@@ -34,6 +51,31 @@ function permutations(){
         product *= i
     }
     out.innerHTML = first + " permute " + second + " is " + product
+}
+
+function processRadio()
+{
+    first = document.getElementById("form1_num1").value
+    second = document.getElementById("form1_num2").value
+
+    first=(Number)(first);
+    second=(Number)(second);
+
+        if(document.getElementById("plus").checked){
+            first += second;
+    
+        }else if(document.getElementById("minus").checked){
+            first -= second;
+    
+        }else if(document.getElementById("times").checked){
+            first *= second;
+    
+        }else{
+            first /= second;
+        }
+        out = document.getElementById("result2")
+        out.innerHTML = first
+        
 }
 </script>
 
